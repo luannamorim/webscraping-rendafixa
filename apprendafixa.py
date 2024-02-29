@@ -28,6 +28,10 @@ index = range_label_text.find('de ')
 qtd_itens = range_label_text[index + 3:]
 ultima_pagina = math.ceil(int(qtd_itens) / 60)
 
+print("Quantidade de itens: " + qtd_itens)
+print("Número de páginas: ", ultima_pagina)
+
+
 dic_produtos = {'produto': [], 'instituição': [], 'Valor Mínimo': [], 'Rentabilidade': [], 'Valor Líquido': [],
                 'Rating do Emissor': [], 'Vencimento': [], 'Liquidez': [], 'Taxa': [], 'Detalhes': []}
 
@@ -39,7 +43,7 @@ try:
             )
         )
 
-        print("Página " + str(i))
+        print("Load página " + str(i))
 
         for element in elements:
             texto = element.text
@@ -78,7 +82,7 @@ try:
         driver.execute_script("arguments[0].click();", next_page_button)
 
 except Exception as e:
-    print("Processo Finalizado")
+    print("Processo finalizado")
 
 finally:
 
