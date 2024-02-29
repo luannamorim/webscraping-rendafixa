@@ -11,8 +11,10 @@ from datetime import datetime
 
 chrome_options = Options()
 chrome_options.add_argument("--headless")
+
+#baixar versão compatível: https://googlechromelabs.github.io/chrome-for-testing/
 service = Service(
-    r'C:\Users\Luann\Downloads\chromedriver-win64\chromedriver-win64\chromedriver.exe')
+    r'.\chromedriver.exe')
 driver = webdriver.Chrome(service=service, options=chrome_options)
 
 url = 'https://apprendafixa.com.br/app/investimentos/rendafixa'
@@ -90,7 +92,7 @@ finally:
 
     data_atual = datetime.now()
     nome_arquivo = data_atual.strftime("%Y-%m-%d") + ".csv"
-    caminho_arquivo = r'C:\Users\Luann\Downloads\\' + nome_arquivo
+    caminho_arquivo = r'.\\' + nome_arquivo
     df = pd.DataFrame(dic_produtos)
     df.to_csv(caminho_arquivo, encoding='utf-8-sig', sep=';', index=False)
     print("Documento salvo em: " + caminho_arquivo)
