@@ -32,9 +32,24 @@ elements = WebDriverWait(driver, 60).until(
     )
 )
 
+data = {}
+
 for element in elements:
-    conteudo_elemento = element.text.strip()
-    print(conteudo_elemento)
+    itens = element.find_elements(By.TAG_NAME, 'div')
+    categoria = itens[0].text
+    dados = {}
+    dados['SIMPAR'] = itens[1].text
+    dados['Valor Mínimo'] = itens[2].text
+    dados['Rentabilidade'] = itens[3].text
+    dados['Valor Líquido'] = itens[4].text
+    dados['Rating do Emissor'] = itens[5].text
+    dados['Vencimento'] = itens[6].text
+    dados['Liquidez'] = itens[7].text
+    dados['Taxa'] = itens[8].text
+    dados['LCI/LCA'] = itens[9].text
+    data[categoria] = dados
+
+print(data)
 
 
 driver.quit()

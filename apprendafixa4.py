@@ -5,6 +5,7 @@ from selenium.webdriver.common.by import By
 from selenium.webdriver.support.ui import WebDriverWait
 from selenium.webdriver.support import expected_conditions as EC
 import math
+import re
 
 chrome_options = Options()
 chrome_options.add_argument("--headless")
@@ -26,6 +27,7 @@ index = range_label_text.find('de ')
 qtd_itens = range_label_text[index + 3:]
 ultima_pagina = math.ceil(int(qtd_itens) / 60)
 
+
 elements = WebDriverWait(driver, 60).until(
     EC.presence_of_all_elements_located(
         (By.CLASS_NAME, 'card')
@@ -33,9 +35,31 @@ elements = WebDriverWait(driver, 60).until(
 )
 
 for element in elements:
-    conteudo_elemento = element.text.strip()
-    print(conteudo_elemento)
 
+    texto = element.text
+
+    palavras_remover = [
+        "Valor Mínimo",
+        "Rentabilidade",
+        "Valor Líquido",
+        "Rating do Emissor",
+        "Vencimento",
+        "Liquidez",
+        "Taxa",
+        "INVESTIR",
+        "+ DETALHES"
+    ]
+
+    padrao = "|".join(map(re.escape, palavras_remover))
+
+    texto_limpo = re.sub(padrao, "", texto)
+
+    linhas = texto_limpo.split('\n')
+    dados = [linha.strip() for linha in linhas if linha.strip()]
+
+    resultado = ', '.join(dados)
+
+    print(resultado)
 
 driver.quit()
 
