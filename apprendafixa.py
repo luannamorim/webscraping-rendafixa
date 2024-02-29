@@ -12,7 +12,7 @@ from datetime import datetime
 chrome_options = Options()
 chrome_options.add_argument("--headless")
 
-#baixar versão compatível: https://googlechromelabs.github.io/chrome-for-testing/
+#https://googlechromelabs.github.io/chrome-for-testing/
 service = Service(
     r'.\chromedriver.exe')
 driver = webdriver.Chrome(service=service, options=chrome_options)
