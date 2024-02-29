@@ -81,8 +81,8 @@ try:
 
         driver.execute_script("arguments[0].click();", next_page_button)
 
-except Exception as e:
-    print("Processo finalizado")
+except Exception:
+    print("Processo finalizado!")
 
 finally:
 
