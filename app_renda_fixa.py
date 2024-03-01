@@ -33,14 +33,13 @@ print(qtd_itens, " itens disponíveis")
 produtos = []
 
 try:
+    print("Extraindo informações...")
     for i in range(1, ultima_pagina+1):
         elements = WebDriverWait(driver, 20).until(
             EC.presence_of_all_elements_located(
                 (By.CLASS_NAME, 'card')
             )
         )
-
-        print("Extraindo página " + str(i) + " de " + str(ultima_pagina))
 
         for element in elements:
             texto = element.text.split('\n')
