@@ -59,9 +59,9 @@ finally:
     driver.quit()
 
     for i, sublista in reversed(list(enumerate(produtos))):
-        if sublista[3] == "Valor Mínimo":
+        if sublista[2] != "Valor Mínimo":
             sublista.pop(0)
-        elif sublista[6] != "Valor Líquido":
+        elif sublista[14] != "Taxa":
             del produtos[i]
 
     colunas = [0, 1, 3, 5, 7, 9, 11, 13, 15, 16]
