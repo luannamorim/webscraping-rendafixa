@@ -14,21 +14,8 @@ O objetivo deste projeto é extrair informações como nome do produto, rendimen
 
 ## Instalação
 
-1. Certifique-se de ter o Python 3.x instalado. Você pode baixá-lo em [python.org](https://www.python.org/downloads/).
+Certifique-se de ter o Python 3.x instalado. Você pode baixá-lo em [python.org](https://www.python.org/downloads/) e baixe a versão compatível do Chromedriver no [site oficial do Chrome for Testing](https://googlechromelabs.github.io/chrome-for-testing/#stable).
 
-2. Baixe a versão compatível do Chromedriver no [site oficial do Chrome for Testing](https://googlechromelabs.github.io/chrome-for-testing/#stable).
-
-3. Clone este repositório:
-
-    ```
-    git clone https://github.com/seu-usuario/RendaFixa-Scraper.git
-    ```
-
-4. Instale as bibliotecas Python necessárias:
-
-    ```
-    pip install -r requirements.txt
-    ```
 
 ## Uso
 
