@@ -9,13 +9,8 @@ O objetivo deste projeto é extrair informações como nome do produto, rendimen
 ## Requisitos
 
 - Python 3.x
-- Chromedriver
+- Chromedriver: Baixe a versão compatível do Chromedriver no [site oficial do Chrome for Testing](https://googlechromelabs.github.io/chrome-for-testing/#stable).
 - Bibliotecas Python: Selenium, Pandas
-
-## Instalação
-
-Certifique-se de ter o Python 3.x instalado. Você pode baixá-lo em [python.org](https://www.python.org/downloads/) e baixe a versão compatível do Chromedriver no [site oficial do Chrome for Testing](https://googlechromelabs.github.io/chrome-for-testing/#stable).
-
 
 ## Uso
 
