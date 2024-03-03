@@ -40,7 +40,7 @@ O objetivo deste projeto é extrair informações como nome do produto, rendimen
     python extract_info.py
     ```
 
-3. Os dados extraídos serão salvos em um arquivo CSV chamado `renda_fixa.csv`.
+3. Os dados extraídos serão salvos em um arquivo CSV chamado `dados_extraidos.csv`.
 
 ## Contribuição
 
